@@ -1,24 +1,23 @@
-class Alumno:
+class Producto:
 
-    def __init__(self, nombre, calificacion):
+    def __init__(self, nombre, precio):
         self.nombre = nombre
-        self.calificacion = calificacion
-
-    def aprobado(self):
-        return self.calificacion >= 6
+        self.precio = precio
 
 
-alumnos = [
-    Alumno("Ana", 9),
-    Alumno("Luis", 5),
-    Alumno("Sofia", 8)
-]
+productos = {
+    "A001": Producto("Lapiz", 8.50),
+    "A002": Producto("Cuaderno", 35.00),
+    "A003": Producto("Pluma", 12.00)
+}
 
-for alumno in alumnos:
+codigo = input("Codigo a buscar: ")
 
-    print(alumno.nombre, alumno.calificacion)
+if codigo in productos:
+    producto = productos[codigo]
 
-    if alumno.aprobado():
-        print("Aprobado")
-    else:
-        print("Reprobado")
+    print("Producto:", producto.nombre)
+    print("Precio: $", producto.precio)
+
+else:
+    print("Codigo no encontrado")
