@@ -1,0 +1,25 @@
+import tkinter as tk
+def proceso () :
+    peso = float (entrada1.get())
+    altura = float (entrada2.get())
+    IMC =  peso / (altura*altura)
+    etiquetaresultado.config(text = "Tu IMC es de:"  + str (IMC))
+ventana = tk.Tk()
+ventana.title ("Calculador de IMC")
+ventana.geometry ("700x500")
+textotitulo = tk.Label(ventana, text = "===CALCULADOR DE IMC===", font= ("Impact", 26))
+textotitulo.pack()
+textosub = tk.Label(ventana, text = "¿Consideras que estas sano?\nCalcula tu indice de masa corporal ahora!!!\nIntroduce tu peso en kg", font=("Times New Roman", 14, "bold"))
+textosub.pack()
+entrada1 = tk.Entry(ventana)
+entrada1.pack()
+textoaltura = tk.Label(ventana, text = "Introduce tu altura en metros", font = ("Times New Roman", 14, "bold"))
+textoaltura.pack()              
+entrada2 = tk.Entry(ventana)
+entrada2.pack()
+botoncalcular = tk.Button(ventana, text= "calcular", font = "bold", command = proceso)
+botoncalcular.pack()
+etiquetaresultado = tk.Label(ventana,text = "Cual sera tu resultado:O???", font = "bold")
+etiquetaresultado.pack()
+
+
